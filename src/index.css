@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* ➤ 1. Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ➤ 2. Define theme variables */
+@theme {
+  /* Your CSS variables for colors */
+  --tw-color-primary: #ffcc70;
+  --tw-color-secondary: #f97316;
+}
+
+/* ➤ 3. Custom styles using the variables */
+:root {
+  --tw-color-primary: #ffcc70;
+  --tw-color-secondary: #f97316;
+}
+
+.bg-primary {
+  background-color: var(--tw-color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--tw-color-secondary);
+}
+
+.border-primary {
+  border-color: var(--tw-color-primary);
+}
+
+.text-primary {
+  color: var(--tw-color-primary);
+}
