@@ -92,7 +92,7 @@ const testimonialsData = [
     },
     {
         id: 2,
-        name: "Chioma Nwosu",
+        name: "Chioma Nwosu",  
         text: "Fast delivery and amazing customer service. The clothes fit perfectly and the fabric quality is top-notch!",
         img: "https://i.pravatar.cc/150?u=chioma"
     },
