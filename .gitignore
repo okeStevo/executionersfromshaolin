@@ -29,7 +29,6 @@ dist-ssr
 # React/Vite project files (not needed for vanilla version)
 /src/
 /public/
-index.html
 eslint.config.js
 vite.config.js
 package.json
