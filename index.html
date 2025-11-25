@@ -267,6 +267,79 @@
     <!-- Products Section -->
     <div class="mt-14 mb-12" id="products"></div>
 
+    <!-- Trending Now Section -->
+    <div class="py-16 bg-gradient-to-br from-orange-50 to-pink-50 dark:from-gray-800 dark:to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <p data-aos="fade-up" class="text-sm text-primary">What's Hot</p>
+                <h1 data-aos="fade-up" class="text-3xl font-bold">Trending This Week</h1>
+                <p data-aos="fade-up" class="text-xs text-gray-400">Most popular items our customers are loving right now</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div data-aos="flip-left" data-aos-delay="0" class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="relative mb-3">
+                        <img src="images/BON_1175.jpg" alt="Trending Item" class="w-full h-48 object-cover rounded-md">
+                        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">Hot</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">Designer Piece</h3>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">₦15,000</span>
+                        <div class="flex items-center gap-1">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <span class="text-xs">4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="flip-left" data-aos-delay="100" class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="relative mb-3">
+                        <img src="images/BON_1237.jpg" alt="Trending Item" class="w-full h-48 object-cover rounded-md">
+                        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">Hot</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">Casual Style</h3>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">₦12,500</span>
+                        <div class="flex items-center gap-1">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <span class="text-xs">4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="flip-left" data-aos-delay="200" class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="relative mb-3">
+                        <img src="images/BON_1261.jpg" alt="Trending Item" class="w-full h-48 object-cover rounded-md">
+                        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">Hot</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">Street Fashion</h3>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">₦18,000</span>
+                        <div class="flex items-center gap-1">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <span class="text-xs">5.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="flip-left" data-aos-delay="300" class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="relative mb-3">
+                        <img src="images/IMG_1765.jpg" alt="Trending Item" class="w-full h-48 object-cover rounded-md">
+                        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">Hot</span>
+                    </div>
+                    <h3 class="font-semibold text-sm mb-1">Classic Look</h3>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">₦14,000</span>
+                        <div class="flex items-center gap-1">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <span class="text-xs">4.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Top Products Section -->
     <div id="topProducts"></div>
 
@@ -281,6 +354,14 @@
                 <div class="flex flex-col justify-center gap-6 sm:pt-0">
                     <h1 class="text-3xl sm:text-4xl font-bold">New Season Collection</h1>
                     <p class="text-sm text-gray-500 tracking-wide leading-5">Discover our latest arrivals featuring premium quality clothing designed for the modern individual. From casual wear to statement pieces, we've got everything you need to elevate your style.</p>
+                    
+                    <!-- Price Range -->
+                    <div data-aos="fade-up" class="bg-primary/10 dark:bg-primary/20 rounded-lg p-4">
+                        <p class="text-xs text-gray-600 dark:text-gray-300 mb-2">Starting from</p>
+                        <p class="text-3xl font-bold text-primary">₦8,500</p>
+                        <p class="text-xs text-gray-500 mt-1">Limited time offer</p>
+                    </div>
+
                     <div class="flex flex-col gap-4">
                         <div data-aos="fade-up" class="flex items-center gap-4">
                             <i class="fas fa-shield-alt text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-violet-100 dark:bg-violet-400"></i>
@@ -298,6 +379,13 @@
                             <i class="fas fa-undo text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-yellow-100 dark:bg-yellow-400"></i>
                             <p>Easy Returns & Exchange</p>
                         </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div data-aos="fade-up">
+                        <button class="order-now-btn gradient-btn hover:scale-105 duration-200 text-white py-3 px-8 rounded-full font-semibold">
+                            Explore Collection
+                        </button>
                     </div>
                 </div>
             </div>

@@ -222,6 +222,8 @@ AOS.init({
     duration: 800,
     easing: "ease-in-sine",
     delay: 100,
+    once: true,  // Animation happens only once
+    mirror: false  // Elements don't animate out when scrolling past them
 });
 
 // Dark Mode Toggle
@@ -294,8 +296,10 @@ $(document).ready(function() {
     renderTopProducts();
     renderTestimonials();
     
-    // Reinitialize AOS after rendering
-    AOS.refresh();
+    // Reinitialize AOS after rendering - with a small delay to ensure DOM is ready
+    setTimeout(() => {
+        AOS.refresh();
+    }, 100);
     
     // Initialize Hero Slider
     $('#heroSlider').slick({
