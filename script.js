@@ -1,44 +1,44 @@
-// Products Data
+// Products Data - Using actual images from the images folder
 const productsData = [
     {
         id: 1,
-        image: "src/assets/women/women1.jpg",
-        title: "Striped Sleeveless Top",
+        image: "images/t-shirt1.JPG",
+        title: "Classic T-Shirt",
         rating: 5.0,
-        color: "Yellow, Black & Off-white",
+        color: "White",
         aosDelay: "0"
     },
     {
         id: 2,
-        image: "src/assets/women/women2.jpg",
-        title: "Classic Denim Jacket",
-        rating: 4.5,
+        image: "images/full-men-Tshirt.JPG",
+        title: "Premium Men's Tee",
+        rating: 4.8,
         color: "Black",
         aosDelay: "200"
     },
     {
         id: 3,
-        image: "src/assets/women/women3.jpg",
-        title: "Soft Pink Gown",
-        rating: 4.7,
-        color: "Pastel Pink",
+        image: "images/full-men-cloth-white.PNG",
+        title: "Elegant White Outfit",
+        rating: 4.9,
+        color: "White",
         aosDelay: "400"
     },
     {
         id: 4,
-        image: "src/assets/women/women4.jpg",
-        title: "Lilac Fur Jacket",
-        rating: 4.4,
-        color: "Faint Purple",
+        image: "images/full-men-cloth-black.JPG",
+        title: "Sophisticated Black Suit",
+        rating: 4.7,
+        color: "Black",
         aosDelay: "600"
     },
     {
         id: 5,
-        image: "src/assets/women/women5.jpg",
-        title: "Linen Summer Dress",
-        rating: 4.4,
-        color: "Coral Pink",
-        aosDelay: "600"
+        image: "images/full-men-jacket-black].PNG",
+        title: "Premium Black Jacket",
+        rating: 4.9,
+        color: "Black",
+        aosDelay: "800"
     }
 ];
 
@@ -46,39 +46,39 @@ const productsData = [
 const topProductsData = [
     {
         id: 1,
-        image: "src/assets/shirt/shirt1.jpg",
-        title: "Women Ethnic",
-        description: "Elegant and timeless ethnic wear crafted with vibrant patterns to add a cultural touch to your style."
+        image: "images/BON_1175.jpg",
+        title: "Designer Collection",
+        description: "Exclusive designer piece crafted with premium materials for the fashion-forward individual."
     },
     {
         id: 2,
-        image: "src/assets/shirt/shirt2.jpg",
-        title: "Women Western",
-        description: "Modern western outfits designed for comfort and flair — perfect for every confident woman."
+        image: "images/BON_1237.jpg",
+        title: "Casual Elegance",
+        description: "Perfect blend of comfort and style for everyday wear that makes a statement."
     },
     {
         id: 3,
-        image: "src/assets/shirt/shirt3.jpg",
-        title: "Printed T-Shirt",
-        description: "Casual printed tee that brings personality to your look — bold, bright, and breathable."
+        image: "images/BON_1261.jpg",
+        title: "Urban Street Style",
+        description: "Contemporary streetwear that captures the essence of modern fashion trends."
     },
     {
         id: 4,
-        image: "src/assets/shirt/shirt4.jpg",
-        title: "Long Sleeve Tee",
-        description: "Stay cool and covered in this lightweight long sleeve shirt — perfect for layering or solo wear."
+        image: "images/IMG_1765.jpg",
+        title: "Classic Wardrobe Essential",
+        description: "Timeless piece that belongs in every wardrobe. Versatile and effortlessly stylish."
     },
     {
         id: 5,
-        image: "src/assets/shirt/shirt5.jpg",
-        title: "Men's Classic Tee",
-        description: "A go-to essential for every man — built with premium cotton for all-day comfort and clean looks."
+        image: "images/full-men-cloth.JPG",
+        title: "Premium Full Outfit",
+        description: "Complete ensemble designed for those who appreciate quality and sophistication."
     },
     {
         id: 6,
-        image: "src/assets/shirt/shirt6.jpg",
-        title: "Roots & Culture Shirt",
-        description: "Celebrate culture with this iconic Africa-map shirt — bold, proud, and powerfully stylish."
+        image: "images/t-shirt1.JPG",
+        title: "Signature T-Shirt",
+        description: "Our bestselling tee made from premium cotton for ultimate comfort and durability."
     }
 ];
 
@@ -86,33 +86,33 @@ const topProductsData = [
 const testimonialsData = [
     {
         id: 1,
-        name: "Sarah Johnson",
-        text: "I absolutely love the quality of the products! Fast delivery and great customer service. Will definitely shop again.",
-        img: "https://i.pinimg.com/1200x/6d/52/c7/6d52c7371ff701b4c1343b6458bb1200.jpg"
+        name: "Adebayo Ogunleye",
+        text: "The quality of the clothing is exceptional! I've ordered multiple times and each piece exceeds my expectations. Highly recommend!",
+        img: "https://i.pravatar.cc/150?u=adebayo"
     },
     {
         id: 2,
-        name: "Michael Adeyemi",
-        text: "The prices are unbeatable and the styles are trendy. I'm impressed by how easy it was to order.",
-        img: "https://i.pinimg.com/1200x/22/eb/72/22eb722dafb7676609e9473c1a1c9949.jpg"
+        name: "Chioma Nwosu",
+        text: "Fast delivery and amazing customer service. The clothes fit perfectly and the fabric quality is top-notch!",
+        img: "https://i.pravatar.cc/150?u=chioma"
     },
     {
         id: 3,
-        name: "Chidera Okafor",
-        text: "I bought a few items for my family and everyone loved them. Great packaging and delivery too!",
-        img: "https://i.pinimg.com/736x/9f/e1/05/9fe105d789b9a7c387aa54ae15463981.jpg"
+        name: "Tunde Bakare",
+        text: "I'm impressed by the attention to detail in every piece. Charlyn Clothing has become my go-to store for quality fashion.",
+        img: "https://i.pravatar.cc/150?u=tunde"
     },
     {
         id: 4,
-        name: "James Ojo",
-        text: "Customer support was very helpful and responsive. The experience felt smooth from start to finish.",
-        img: "https://i.pinimg.com/1200x/71/83/34/7183348f435c337bcc6deeb7e09e7c95.jpg"
+        name: "Fatima Abdullahi",
+        text: "Love the variety and style! The clothes are modern, comfortable, and reasonably priced. Will definitely shop again!",
+        img: "https://i.pravatar.cc/150?u=fatima"
     },
     {
         id: 5,
-        name: "Amina Bello",
-        text: "I wasn't sure at first, but once I received my order, I was blown away. The fit, the feel, everything was perfect!",
-        img: "https://i.pinimg.com/736x/f2/e2/55/f2e255f1708312e5e7fd3971a0aba9e7.jpg"
+        name: "Emeka Okafor",
+        text: "Outstanding quality and great customer support. The ordering process was smooth and delivery was quick. Five stars!",
+        img: "https://i.pravatar.cc/150?u=emeka"
     }
 ];
 
@@ -123,17 +123,17 @@ function renderProducts(containerId) {
     const html = `
         <div class="container mx-auto px-4">
             <div class="text-center mb-10 max-w-[600px] mx-auto">
-                <p data-aos="fade-up" class="text-sm text-primary">Top Selling Products for you</p>
-                <h1 data-aos="fade-up" class="text-3xl font-bold">Products</h1>
+                <p data-aos="fade-up" class="text-sm text-primary">New Arrivals</p>
+                <h1 data-aos="fade-up" class="text-3xl font-bold">Latest Collection</h1>
                 <p data-aos="fade-up" class="text-xs text-gray-400">
-                    Discover what everyone's loving! Our top-selling item combines unbeatable quality, style, and value. Trusted by hundreds, it's a customer favorite for a reason. Don't miss out—grab yours while it's still in stock!
+                    Discover our newest arrivals featuring the latest trends in fashion. Each piece is carefully selected to bring you style, comfort, and quality.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
                 ${productsData.map(product => `
                     <div data-aos="fade-up" data-aos-delay="${product.aosDelay}" class="space-y-3">
-                        <img src="${product.image}" alt="" class="w-[150px] h-[220px] object-cover rounded-md">
+                        <img src="${product.image}" alt="${product.title}" class="w-[150px] h-[220px] object-cover rounded-md">
                         <div>
                             <h3 class="font-semibold">${product.title}</h3>
                             <p class="text-sm text-gray-600">${product.color}</p>
@@ -147,7 +147,7 @@ function renderProducts(containerId) {
             </div>
 
             <div class="flex justify-center">
-                <button class="gradient-btn text-center mt-10 cursor-pointer text-white py-1 px-5 rounded-md">View All Button</button>
+                <button class="gradient-btn text-center mt-10 cursor-pointer text-white py-1 px-5 rounded-md">View All Products</button>
             </div>
         </div>
     `;
@@ -162,10 +162,10 @@ function renderTopProducts() {
     const html = `
         <div class="container mx-auto px-4">
             <div class="text-left mb-24">
-                <p data-aos="fade-up" class="text-sm text-primary">Top Rated Products for you</p>
-                <h1 data-aos="fade-up" class="text-3xl font-bold">Best Products</h1>
+                <p data-aos="fade-up" class="text-sm text-primary">Featured Collection</p>
+                <h1 data-aos="fade-up" class="text-3xl font-bold">Best Sellers</h1>
                 <p data-aos="fade-up" class="text-xs text-gray-400">
-                    Discover what everyone's loving! Our top-selling item combines unbeatable quality, style, and value. Trusted by hundreds, it's a customer favorite for a reason. Don't miss out—grab yours while it's still in stock!
+                    Our most popular items loved by customers. Premium quality clothing that combines style, comfort, and durability.
                 </p>
             </div>
 
@@ -177,7 +177,7 @@ function renderTopProducts() {
                         </div>
                         <div class="p-4 text-center">
                             <div class="w-full flex items-center justify-center gap-1 mb-2">
-                                ${Array(6).fill('<i class="fas fa-star text-yellow-500 text-sm"></i>').join('')}
+                                ${Array(5).fill('<i class="fas fa-star text-yellow-500 text-sm"></i>').join('')}
                             </div>
                             <h1 class="text-xl font-bold">${product.title}</h1>
                             <p class="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">${product.description}</p>
@@ -200,7 +200,7 @@ function renderTestimonials() {
         <div class="my-6">
             <div class="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative">
                 <div class="mb-4">
-                    <img src="${testimonial.img}" alt="" class="rounded-full w-20 h-20">
+                    <img src="${testimonial.img}" alt="${testimonial.name}" class="rounded-full w-20 h-20">
                 </div>
                 <div class="flex flex-col items-center gap-4">
                     <div class="space-y-3">
@@ -280,7 +280,7 @@ orderPopup.addEventListener('click', (e) => {
 
 orderForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Order placed successfully!');
+    alert('Thank you for your order! We will contact you shortly.');
     orderPopup.classList.remove('active');
     document.body.style.overflow = 'auto';
     orderForm.reset();
@@ -290,7 +290,7 @@ orderForm.addEventListener('submit', (e) => {
 $(document).ready(function() {
     // Render sections
     renderProducts('products');
-    renderProducts('productsRepeat');
+    renderProducts('featured');
     renderTopProducts();
     renderTestimonials();
     

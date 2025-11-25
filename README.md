@@ -1,16 +1,14 @@
-# Charlyn Store - Vanilla JavaScript Version
+# Charlyn Clothing Store
 
-This is a vanilla HTML/CSS/JavaScript conversion of the React-based Charlyn Store e-commerce website.
+A modern, responsive clothing e-commerce website built with vanilla HTML, CSS, and JavaScript.
 
 ## 📁 Files
 
-- **store-vanilla.html** - Main HTML file with complete page structure
-- **store-vanilla.js** - JavaScript file with all functionality
-- **app.js** - Alternative JavaScript implementation
+- **index.html** - Main HTML file with complete page structure
+- **script.js** - JavaScript file with all functionality
+- **images/** - Folder containing all product images
 
 ## 🚀 Features
-
-All features from the React version have been converted:
 
 ### ✅ Implemented Features
 
@@ -19,7 +17,7 @@ All features from the React version have been converted:
    - Search functionality
    - Shopping cart button
    - Dark mode toggle
-   - Dropdown menu for trending products
+   - Dropdown menu for categories
 
 2. **Hero Section**
    - Auto-playing carousel with 4 slides
@@ -28,12 +26,12 @@ All features from the React version have been converted:
    - Responsive images
 
 3. **Products Section**
-   - Grid layout of products
+   - Grid layout of latest arrivals
    - Product cards with images, titles, colors, and ratings
    - "View All" button
 
-4. **Top Products Section**
-   - Featured product cards
+4. **Featured Products Section**
+   - Best-selling product cards
    - Hover effects
    - Star ratings
    - Order buttons
@@ -45,7 +43,7 @@ All features from the React version have been converted:
 
 6. **Subscribe Section**
    - Email subscription form
-   - Background image
+   - Gradient background
 
 7. **Testimonials Section**
    - Customer reviews carousel
@@ -55,11 +53,12 @@ All features from the React version have been converted:
 8. **Footer**
    - Company information
    - Quick links
+   - Categories
    - Social media links
    - Contact information
 
 9. **Order Popup Modal**
-   - Form with name, phone, and address fields
+   - Form with name, phone, email, and address fields
    - Close button
    - Click outside to close
    - Form validation
@@ -98,7 +97,7 @@ All dependencies are loaded via CDN, so no installation is required:
 
 1. **Open the HTML file**
    ```
-   Simply open store-vanilla.html in any modern web browser
+   Simply open index.html in any modern web browser
    ```
 
 2. **No build process required**
@@ -113,35 +112,10 @@ All dependencies are loaded via CDN, so no installation is required:
    - Scroll to see AOS animations
    - View testimonials carousel
 
-## 🔄 Differences from React Version
-
-### Removed
-- React and ReactDOM
-- React hooks (useState, useEffect)
-- JSX syntax
-- Component-based architecture
-- Vite build system
-- npm dependencies
-
-### Added
-- Vanilla JavaScript event listeners
-- Direct DOM manipulation
-- jQuery for carousel functionality
-- CDN-based dependencies
-- Simpler file structure
-
-### Maintained
-- All visual design and styling
-- All functionality
-- Responsive layout
-- Dark mode
-- Animations
-- Carousel features
-
 ## 🎨 Customization
 
 ### Colors
-Edit the CSS variables in the `<style>` section:
+Edit the CSS variables in the `<style>` section of index.html:
 ```css
 :root {
     --color-primary: #ffcc70;
@@ -150,15 +124,16 @@ Edit the CSS variables in the `<style>` section:
 ```
 
 ### Products Data
-Edit the arrays in `store-vanilla.js`:
-- `productsData` - Main products section
+Edit the arrays in `script.js`:
+- `productsData` - Latest arrivals section
 - `topProductsData` - Featured products
 - `testimonialsData` - Customer reviews
 
 ### Images
 Replace image paths in:
-- HTML file for static images
-- JavaScript arrays for dynamic content
+- HTML file for hero slider images
+- JavaScript arrays for product images
+- All images should be in the `images/` folder
 
 ## 📱 Browser Compatibility
 
@@ -179,9 +154,9 @@ Works on all modern browsers:
 ## 🚀 Deployment
 
 Simply upload these files to any web server:
-- store-vanilla.html
-- store-vanilla.js
-- src/ folder (with all assets)
+- index.html
+- script.js
+- images/ folder (with all product images)
 
 No special server configuration needed!
 
@@ -190,12 +165,15 @@ No special server configuration needed!
 Possible additions:
 - Add backend integration for order form
 - Implement actual search functionality
-- Add shopping cart functionality
+- Add shopping cart functionality with item management
 - Connect email subscription to mailing service
-- Add more product pages
+- Add product detail pages
 - Implement filtering and sorting
+- Add size and color selection
+- Integrate payment gateway
 
 ---
 
-**Original React Version**: See the `src/` folder for the React implementation
-**Vanilla Version**: Use `store-vanilla.html` for the standalone version
+**Live Demo**: Open `index.html` in your browser to see the site in action!
+
+**Contact**: +234 906 146 2887
