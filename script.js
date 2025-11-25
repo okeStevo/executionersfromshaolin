@@ -99,7 +99,7 @@ const testimonialsData = [
     {
         id: 3,
         name: "Tunde Bakare",
-        text: "I'm impressed by the attention to detail in every piece. Charlyn Clothing has become my go-to store for quality fashion.",
+        text: "I'm impressed by the attention to detail in every piece. TTV Clothing has become my go-to store for quality fashion.",
         img: "https://i.pravatar.cc/150?u=tunde"
     },
     {
