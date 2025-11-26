@@ -218,10 +218,10 @@ function renderTestimonials() {
 
 // Initialize AOS
 AOS.init({
-    offset: 100,
+    offset: -300,
     duration: 800,
     easing: "ease-in-sine",
-    delay: 100,
+    delay: 60,
     once: true,  // Animation happens only once
     mirror: false  // Elements don't animate out when scrolling past them
 });
