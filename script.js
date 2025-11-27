@@ -123,9 +123,9 @@ function renderProducts(containerId) {
     const html = `
         <div class="container mx-auto px-4">
             <div class="text-center mb-10 max-w-[600px] mx-auto">
-                <p data-aos="fade-up" class="text-sm text-primary">New Arrivals</p>
+                <p data-aos="fade-up" class="text-sm text-black dark:text-white">New Arrivals</p>
                 <h1 data-aos="fade-up" class="text-3xl font-bold">Latest Collection</h1>
-                <p data-aos="fade-up" class="text-xs text-gray-400">
+                <p data-aos="fade-up" class="text-xs text-gray-600 text-black dark:text-gray-400">
                     Discover our newest arrivals featuring the latest trends in fashion. Each piece is carefully selected to bring you style, comfort, and quality.
                 </p>
             </div>
@@ -162,17 +162,17 @@ function renderTopProducts() {
     const html = `
         <div class="container mx-auto px-4">
             <div class="text-left mb-24">
-                <p data-aos="fade-up" class="text-sm text-primary">Featured Collection</p>
+                <p data-aos="fade-up" class="text-sm text-black dark:text-white">Featured Collection</p>
                 <h1 data-aos="fade-up" class="text-3xl font-bold">Best Sellers</h1>
-                <p data-aos="fade-up" class="text-xs text-gray-400">
+                <p data-aos="fade-up" class="text-xs text-gray-600 dark:text-gray-400">
                     Our most popular items loved by customers. Premium quality clothing that combines style, comfort, and durability.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-5 place-items-center">
                 ${topProductsData.map(product => `
-                    <div data-aos="zoom-in" class="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-secondary hover:text-white relative shadow-xl duration-300 group max-w-[300px]">
-                        <div class="h-[250px] flex justify-center items-center bg-gray-50">
+                    <div data-aos="zoom-in" class="rounded-2xl bg-white dark:bg-gray-900 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black relative shadow-xl duration-300 group max-w-[300px]">
+                        <div class="h-[250px] flex justify-center items-center bg-gray-50 dark:bg-gray-800">
                             <img src="${product.image}" alt="${product.title}" class="h-[200px] object-contain transform group-hover:scale-105 duration-300 drop-shadow-md">
                         </div>
                         <div class="p-4 text-center">
@@ -180,8 +180,8 @@ function renderTopProducts() {
                                 ${Array(5).fill('<i class="fas fa-star text-yellow-500 text-sm"></i>').join('')}
                             </div>
                             <h1 class="text-xl font-bold">${product.title}</h1>
-                            <p class="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">${product.description}</p>
-                            <button class="order-now-btn gradient-btn hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary">Order Now</button>
+                            <p class="text-gray-500 group-hover:text-white dark:group-hover:text-black duration-300 text-sm line-clamp-2">${product.description}</p>
+                            <button class="order-now-btn gradient-btn hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white dark:group-hover:bg-black group-hover:text-black dark:group-hover:text-white">Order Now</button>
                         </div>
                     </div>
                 `).join('')}
@@ -198,17 +198,17 @@ function renderTestimonials() {
     
     const html = testimonialsData.map(testimonial => `
         <div class="my-6">
-            <div class="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative">
+            <div class="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-900 bg-gray-100 relative">
                 <div class="mb-4">
                     <img src="${testimonial.img}" alt="${testimonial.name}" class="rounded-full w-20 h-20">
                 </div>
                 <div class="flex flex-col items-center gap-4">
                     <div class="space-y-3">
-                        <p class="text-xs text-gray-500">${testimonial.text}</p>
-                        <h1 class="text-xl font-bold text-black/80 dark:text-light">${testimonial.name}</h1>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">${testimonial.text}</p>
+                        <h1 class="text-xl font-bold text-black dark:text-white">${testimonial.name}</h1>
                     </div>
                 </div>
-                <p class="text-black/20 text-9xl font-serif absolute top-0 right-0">"</p>
+                <p class="text-black/20 dark:text-white/20 text-9xl font-serif absolute top-0 right-0">"</p>
             </div>
         </div>
     `).join('');
@@ -282,10 +282,34 @@ orderPopup.addEventListener('click', (e) => {
 
 orderForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Thank you for your order! We will contact you shortly.');
+    alert('Thank you for your order! Your payment has been received and we will process your delivery shortly.');
     orderPopup.classList.remove('active');
     document.body.style.overflow = 'auto';
     orderForm.reset();
+});
+
+// Format card number input
+document.addEventListener('input', (e) => {
+    if (e.target.placeholder === '1234 5678 9012 3456') {
+        let value = e.target.value.replace(/\s/g, '');
+        let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+        e.target.value = formattedValue;
+    }
+    
+    // Format expiry date
+    if (e.target.placeholder === 'MM/YY') {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length >= 2) {
+            e.target.value = value.slice(0, 2) + '/' + value.slice(2, 4);
+        } else {
+            e.target.value = value;
+        }
+    }
+    
+    // CVV - numbers only
+    if (e.target.placeholder === '123') {
+        e.target.value = e.target.value.replace(/\D/g, '');
+    }
 });
 
 // Initialize when DOM is ready

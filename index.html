@@ -37,11 +37,11 @@
 
     <style>
       :root {
-        --color-primary: #2c5f2d;
-        --color-secondary: #97c1a9;
-        --color-accent: #fc6c85;
-        --color-dark: #1a1a1a;
-        --color-cream: #fef6e4;
+        --color-primary: #000000;
+        --color-secondary: #333333;
+        --color-accent: #1a1a1a;
+        --color-dark: #000000;
+        --color-light: #ffffff;
       }
 
       body {
@@ -70,7 +70,7 @@
       }
 
       .bg-cream {
-        background-color: var(--color-cream);
+        background-color: var(--color-light);
       }
 
       .text-primary {
@@ -99,12 +99,12 @@
 
       /* Dark mode styles */
       .dark {
-        background-color: #0a0a0a;
-        color: #f5f5f5;
+        background-color: #000000;
+        color: #ffffff;
       }
 
       .dark .dark\:bg-gray-900 {
-        background-color: #0a0a0a;
+        background-color: #000000;
       }
 
       .dark .dark\:bg-gray-800 {
@@ -112,11 +112,11 @@
       }
 
       .dark .dark\:bg-gray-950 {
-        background-color: #050505;
+        background-color: #000000;
       }
 
       .dark .dark\:text-white {
-        color: #f5f5f5;
+        color: #ffffff;
       }
 
       .dark .dark\:border-gray-800 {
@@ -127,36 +127,38 @@
         border-color: #2a2a2a;
       }
 
-      /* Gradient button */
+      /* Solid button styles */
       .gradient-btn {
-        background: linear-gradient(
-          135deg,
-          var(--color-primary) 0%,
-          var(--color-secondary) 100%
-        );
+        background-color: #000000;
       }
 
       .gradient-btn-alt {
-        background: linear-gradient(
-          135deg,
-          var(--color-accent) 0%,
-          #ff8fab 100%
-        );
+        background-color: #1a1a1a;
+      }
+      
+      .dark .gradient-btn {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      
+      .dark .gradient-btn-alt {
+        background-color: #ffffff;
+        color: #000000;
       }
 
       /* Vintage paper texture */
       .vintage-texture {
         background-image: linear-gradient(
-            rgba(254, 246, 228, 0.9),
-            rgba(254, 246, 228, 0.9)
+            rgba(255, 255, 255, 0.98),
+            rgba(255, 255, 255, 0.98)
           ),
-          url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+          url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
       }
 
       .dark .vintage-texture {
         background-image: linear-gradient(
-            rgba(26, 26, 26, 0.95),
-            rgba(26, 26, 26, 0.95)
+            rgba(0, 0, 0, 0.98),
+            rgba(0, 0, 0, 0.98)
           ),
           url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
       }
@@ -179,13 +181,21 @@
 
       /* Slick carousel custom styles */
       .slick-dots li button:before {
-        color: var(--color-secondary);
+        color: #666666;
         font-size: 12px;
       }
 
       .slick-dots li.slick-active button:before {
-        color: var(--color-primary);
+        color: #000000;
         font-size: 14px;
+      }
+
+      .dark .slick-dots li button:before {
+        color: #999999;
+      }
+
+      .dark .slick-dots li.slick-active button:before {
+        color: #ffffff;
       }
 
       /* Custom scrollbar */
@@ -194,7 +204,7 @@
       }
 
       ::-webkit-scrollbar-track {
-        background: var(--color-cream);
+        background: #f5f5f5;
       }
 
       .dark ::-webkit-scrollbar-track {
@@ -204,14 +214,26 @@
       ::-webkit-scrollbar-thumb {
         background: linear-gradient(
           135deg,
-          var(--color-primary) 0%,
-          var(--color-secondary) 100%
+          #000000 0%,
+          #333333 100%
         );
         border-radius: 10px;
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background: var(--color-primary);
+        background: #000000;
+      }
+
+      .dark ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #cccccc 100%
+        );
+      }
+
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
       }
 
       /* Decorative elements */
@@ -228,28 +250,36 @@
         height: 3px;
         background: linear-gradient(
           90deg,
-          var(--color-primary),
-          var(--color-accent)
+          #000000,
+          #333333
+        );
+      }
+
+      .dark .decorative-line::before {
+        background: linear-gradient(
+          90deg,
+          #ffffff,
+          #cccccc
         );
       }
     </style>
   </head>
   <body
-    class="bg-cream dark:bg-gray-900 dark:text-white duration-200 vintage-texture"
+    class="bg-white dark:bg-black dark:text-white duration-200 vintage-texture"
   >
     <!-- Navbar -->
     <div
       class="shadow-lg bg-white/80 dark:bg-gray-900/80 backdrop-blur-md dark:text-white sticky top-0 z-40"
     >
       <!-- Upper Navbar -->
-      <div class="bg-primary py-3 border-b-2 border-secondary">
+      <div class="bg-black dark:bg-white py-3 border-b-2 border-gray-300 dark:border-gray-700">
         <div class="container mx-auto px-4 flex justify-between items-center">
           <div>
             <a
               href="#"
-              class="font-bold text-cream text-xl sm:text-2xl flex items-center gap-3 leading-none hover:scale-105 transition-transform"
+              class="font-bold text-white dark:text-black text-xl sm:text-2xl flex items-center gap-3 leading-none hover:scale-105 transition-transform"
             >
-              <div class="bg-secondary/30 backdrop-blur-sm p-1 rounded-lg border-2 border-cream/30 flex items-center justify-center">
+              <div class="bg-gray-800 dark:bg-gray-200 backdrop-blur-sm p-1 rounded-lg border-2 border-gray-600 dark:border-gray-400 flex items-center justify-center">
                 <img src="images/IMG_1765.jpg" alt="TTV Logo" class="w-8 h-8 object-contain rounded" />
               </div>
               <div class="hidden sm:block">
@@ -264,99 +294,90 @@
               <input
                 type="text"
                 placeholder="Search vintage pieces..."
-                class="w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-full border-2 border-cream/50 px-4 py-2 bg-white/10 backdrop-blur-sm text-cream placeholder:text-cream/70 focus:outline-none focus:border-cream focus:bg-white/20"
+                class="w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-full border-2 border-gray-400 dark:border-gray-600 px-4 py-2 bg-white/10 dark:bg-black/10 backdrop-blur-sm text-white dark:text-black placeholder:text-gray-300 dark:placeholder:text-gray-600 focus:outline-none focus:border-white dark:focus:border-black focus:bg-white/20 dark:focus:bg-black/20"
               />
               <button>
                 <i
-                  class="fas fa-search text-cream/70 group-hover:text-cream absolute top-1/2 -translate-y-1/2 right-4"
+                  class="fas fa-search text-gray-300 dark:text-gray-600 group-hover:text-white dark:group-hover:text-black absolute top-1/2 -translate-y-1/2 right-4"
                 ></i>
               </button>
             </div>
 
             <button
               id="orderBtn"
-              class="bg-accent border-2 border-accent hover:bg-white hover:text-accent transition-all duration-300 text-white py-2 px-4 rounded-full flex items-center gap-2 group shadow-lg"
+              class="bg-white dark:bg-black border-2 border-white dark:border-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 text-black dark:text-white py-2 px-4 rounded-full flex items-center gap-2 group shadow-lg"
             >
               <span class="hidden sm:block font-semibold">Cart</span>
               <i
                 class="fas fa-shopping-bag text-lg drop-shadow-sm cursor-pointer"
               ></i>
               <span
-                class="bg-white text-accent text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+                class="bg-black dark:bg-white text-white dark:text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
                 >0</span
               >
             </button>
 
-            <div class="flex items-center">
-              <button
-                id="darkModeToggle"
-                class="text-2xl transition-all duration-300 bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 border-2 border-cream/30"
-              >
-                <i class="fas fa-moon text-cream dark-icon"></i>
-                <i class="fas fa-sun text-cream light-icon hidden"></i>
-              </button>
-            </div>
           </div>
         </div>
       </div>
 
       <!-- Lower Navbar -->
       <div
-        class="flex justify-center bg-white/90 dark:bg-gray-900/90 backdrop-blur-md"
+        class="flex justify-center bg-white/90 dark:bg-black/90 backdrop-blur-md"
       >
-        <ul class="sm:flex hidden items-center gap-1">
+        <ul class="flex items-center gap-1 overflow-x-auto">
           <li>
             <a
               href="#"
-              class="inline-block px-5 py-4 text-gray-800 dark:text-white hover:text-primary dark:hover:text-secondary duration-200 font-medium relative group"
+              class="inline-block px-5 py-4 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 duration-200 font-medium relative group"
             >
               Home
               <span
-                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
+                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 group-hover:w-full transition-all duration-300"
               ></span>
             </a>
           </li>
           <li>
             <a
               href="#products"
-              class="inline-block px-5 py-4 text-gray-800 dark:text-white hover:text-primary dark:hover:text-secondary duration-200 font-medium relative group"
+              class="inline-block px-5 py-4 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 duration-200 font-medium relative group"
             >
               New Arrivals
               <span
-                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
+                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 group-hover:w-full transition-all duration-300"
               ></span>
             </a>
           </li>
           <li>
             <a
               href="#featured"
-              class="inline-block px-5 py-4 text-gray-800 dark:text-white hover:text-primary dark:hover:text-secondary duration-200 font-medium relative group"
+              class="inline-block px-5 py-4 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 duration-200 font-medium relative group"
             >
               Featured
               <span
-                class="absolute bottom-0 left-0 w-1 h-1 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
+                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 group-hover:w-full transition-all duration-300"
               ></span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              class="inline-block px-5 py-4 text-gray-800 dark:text-white hover:text-primary dark:hover:text-secondary duration-200 font-medium relative group"
+              class="inline-block px-5 py-4 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 duration-200 font-medium relative group"
             >
               Men's Collection
               <span
-                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
+                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 group-hover:w-full transition-all duration-300"
               ></span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              class="inline-block px-5 py-4 text-gray-800 dark:text-white hover:text-primary dark:hover:text-secondary duration-200 font-medium relative group"
+              class="inline-block px-5 py-4 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 duration-200 font-medium relative group"
             >
               Women's Collection
               <span
-                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
+                class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 group-hover:w-full transition-all duration-300"
               ></span>
             </a>
           </li>
@@ -364,7 +385,7 @@
           <li class="group relative cursor-pointer">
             <a
               href="#"
-              class="flex items-center gap-1 px-5 py-4 text-gray-800 dark:text-white hover:text-primary dark:hover:text-secondary duration-200 font-medium"
+              class="flex items-center gap-1 px-5 py-4 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 duration-200 font-medium"
             >
               Collections
               <span
@@ -374,33 +395,33 @@
               ></span>
             </a>
             <div
-              class="absolute z-[9999] hidden group-hover:block w-[220px] rounded-xl bg-white dark:bg-gray-800 p-3 shadow-2xl border-2 border-primary/20 mt-2"
+              class="absolute z-[9999] hidden group-hover:block w-[220px] rounded-xl bg-white dark:bg-black p-3 shadow-2xl border-2 border-gray-200 dark:border-gray-800 mt-2"
             >
               <ul class="space-y-1">
                 <li>
                   <a
                     href="#"
-                    class="flex items-center gap-3 w-full rounded-lg p-3 hover:bg-secondary/20 transition-all duration-200 text-gray-700 dark:text-gray-300"
+                    class="flex items-center gap-3 w-full rounded-lg p-3 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200 text-gray-700 dark:text-gray-300"
                   >
-                    <i class="fas fa-tshirt text-primary"></i>
+                    <i class="fas fa-tshirt text-black dark:text-white"></i>
                     <span>Vintage Tees</span>
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    class="flex items-center gap-3 w-full rounded-lg p-3 hover:bg-secondary/20 transition-all duration-200 text-gray-700 dark:text-gray-300"
+                    class="flex items-center gap-3 w-full rounded-lg p-3 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200 text-gray-700 dark:text-gray-300"
                   >
-                    <i class="fas fa-vest text-accent"></i>
+                    <i class="fas fa-vest text-black dark:text-white"></i>
                     <span>Classic Jackets</span>
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    class="flex items-center gap-3 w-full rounded-lg p-3 hover:bg-secondary/20 transition-all duration-200 text-gray-700 dark:text-gray-300"
+                    class="flex items-center gap-3 w-full rounded-lg p-3 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200 text-gray-700 dark:text-gray-300"
                   >
-                    <i class="fas fa-user-tie text-primary"></i>
+                    <i class="fas fa-user-tie text-black dark:text-white"></i>
                     <span>Full Ensembles</span>
                   </a>
                 </li>
@@ -413,7 +434,7 @@
 
     <!-- Hero Section -->
     <div
-      class="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gradient-to-br from-cream via-secondary/10 to-cream flex justify-center items-center dark:bg-gradient-to-br dark:from-gray-900 dark:via-primary/10 dark:to-gray-900 dark:text-white duration-200"
+      class="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gradient-to-br from-white via-gray-50 to-white flex justify-center items-center dark:bg-gradient-to-br dark:from-black dark:via-gray-900 dark:to-black dark:text-white duration-200"
     >
       <!-- Decorative vintage pattern -->
 
@@ -428,7 +449,7 @@
               >
                 <div class="inline-block">
                   <span
-                    class="text-sm uppercase tracking-widest text-primary font-semibold bg-secondary/20 px-4 py-2 rounded-full"
+                    class="text-sm uppercase tracking-widest text-black dark:text-white font-semibold bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-full"
                     >New Collection</span
                   >
                 </div>
@@ -436,7 +457,7 @@
                   data-aos="zoom-out"
                   data-aos-duration="500"
                   data-aos-once="true"
-                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary dark:text-secondary leading-tight"
+                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight"
                 >
                   Timeless Men's Fashion
                 </h1>
@@ -456,12 +477,12 @@
                   class="flex flex-col sm:flex-row gap-4 items-center sm:items-start"
                 >
                   <button
-                    class="order-now-btn gradient-btn hover:scale-105 duration-200 text-white py-3 px-8 rounded-full font-semibold shadow-lg"
+                    class="order-now-btn bg-black dark:bg-white text-white dark:text-black hover:scale-105 duration-200 py-3 px-8 rounded-full font-semibold shadow-lg"
                   >
                     Shop Now
                   </button>
                   <button
-                    class="bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white duration-200 py-3 px-8 rounded-full font-semibold shadow-lg"
+                    class="bg-white dark:bg-black border-2 border-black dark:border-white text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black duration-200 py-3 px-8 rounded-full font-semibold shadow-lg"
                   >
                     View Catalog
                   </button>
@@ -492,7 +513,7 @@
               >
                 <div class="inline-block">
                   <span
-                    class="text-sm uppercase tracking-widest text-accent font-semibold bg-accent/20 px-4 py-2 rounded-full"
+                    class="text-sm uppercase tracking-widest text-black dark:text-white font-semibold bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-full"
                     >Bestseller</span
                   >
                 </div>
@@ -500,7 +521,7 @@
                   data-aos="zoom-out"
                   data-aos-duration="500"
                   data-aos-once="true"
-                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary dark:text-secondary leading-tight"
+                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight"
                 >
                   Classic T-Shirt Collection
                 </h1>
@@ -520,7 +541,7 @@
                   class="flex flex-col sm:flex-row gap-4 items-center sm:items-start"
                 >
                   <button
-                    class="order-now-btn gradient-btn hover:scale-105 duration-200 text-white py-3 px-8 rounded-full font-semibold shadow-lg"
+                    class="order-now-btn bg-black dark:bg-white text-white dark:text-black hover:scale-105 duration-200 py-3 px-8 rounded-full font-semibold shadow-lg"
                   >
                     Shop Now
                   </button>
@@ -551,7 +572,7 @@
               >
                 <div class="inline-block">
                   <span
-                    class="text-sm uppercase tracking-widest text-primary font-semibold bg-primary/20 px-4 py-2 rounded-full"
+                    class="text-sm uppercase tracking-widest text-black dark:text-white font-semibold bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-full"
                     >Premium</span
                   >
                 </div>
@@ -559,7 +580,7 @@
                   data-aos="zoom-out"
                   data-aos-duration="500"
                   data-aos-once="true"
-                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary dark:text-secondary leading-tight"
+                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight"
                 >
                   Vintage Outerwear
                 </h1>
@@ -579,7 +600,7 @@
                   class="flex flex-col sm:flex-row gap-4 items-center sm:items-start"
                 >
                   <button
-                    class="order-now-btn gradient-btn hover:scale-105 duration-200 text-white py-3 px-8 rounded-full font-semibold shadow-lg"
+                    class="order-now-btn bg-black dark:bg-white text-white dark:text-black hover:scale-105 duration-200 py-3 px-8 rounded-full font-semibold shadow-lg"
                   >
                     Shop Now
                   </button>
@@ -610,7 +631,7 @@
               >
                 <div class="inline-block">
                   <span
-                    class="text-sm uppercase tracking-widest text-accent font-semibold bg-accent/20 px-4 py-2 rounded-full"
+                    class="text-sm uppercase tracking-widest text-black dark:text-white font-semibold bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-full"
                     >Exclusive</span
                   >
                 </div>
@@ -618,7 +639,7 @@
                   data-aos="zoom-out"
                   data-aos-duration="500"
                   data-aos-once="true"
-                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary dark:text-secondary leading-tight"
+                  class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight"
                 >
                   Elegant White Collection
                 </h1>
@@ -638,7 +659,7 @@
                   class="flex flex-col sm:flex-row gap-4 items-center sm:items-start"
                 >
                   <button
-                    class="order-now-btn gradient-btn hover:scale-105 duration-200 text-white py-3 px-8 rounded-full font-semibold shadow-lg"
+                    class="order-now-btn bg-black dark:bg-white text-white dark:text-black hover:scale-105 duration-200 py-3 px-8 rounded-full font-semibold shadow-lg"
                   >
                     Shop Now
                   </button>
@@ -672,13 +693,13 @@
         <div class="text-center mb-12">
           <p
             data-aos="fade-up"
-            class="text-sm text-accent uppercase tracking-widest font-semibold"
+            class="text-sm text-black dark:text-white uppercase tracking-widest font-semibold"
           >
             What's Hot
           </p>
           <h1
             data-aos="fade-up"
-            class="text-4xl font-bold text-primary dark:text-secondary decorative-line inline-block"
+            class="text-4xl font-bold text-black dark:text-white decorative-line inline-block"
           >
             Trending This Week
           </h1>
@@ -708,16 +729,16 @@
               >
             </div>
             <h3
-              class="font-bold text-base mb-2 text-primary dark:text-secondary"
+              class="font-bold text-base mb-2 text-black dark:text-white"
             >
               Designer Piece
             </h3>
             <div class="flex items-center justify-between">
-              <span class="text-accent font-bold text-lg">₦15,000</span>
+              <span class="text-black dark:text-white font-bold text-lg">₦15,000</span>
               <div
-                class="flex items-center gap-1 bg-secondary/20 px-2 py-1 rounded-full"
+                class="flex items-center gap-1 bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full"
               >
-                <i class="fas fa-star text-accent text-xs"></i>
+                <i class="fas fa-star text-black dark:text-white text-xs"></i>
                 <span class="text-xs font-semibold">4.9</span>
               </div>
             </div>
@@ -740,16 +761,16 @@
               >
             </div>
             <h3
-              class="font-bold text-base mb-2 text-primary dark:text-secondary"
+              class="font-bold text-base mb-2 text-black dark:text-white"
             >
               Casual Style
             </h3>
             <div class="flex items-center justify-between">
-              <span class="text-accent font-bold text-lg">₦12,500</span>
+              <span class="text-black dark:text-white font-bold text-lg">₦12,500</span>
               <div
-                class="flex items-center gap-1 bg-secondary/20 px-2 py-1 rounded-full"
+                class="flex items-center gap-1 bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full"
               >
-                <i class="fas fa-star text-accent text-xs"></i>
+                <i class="fas fa-star text-black dark:text-white text-xs"></i>
                 <span class="text-xs font-semibold">4.8</span>
               </div>
             </div>
@@ -772,16 +793,16 @@
               >
             </div>
             <h3
-              class="font-bold text-base mb-2 text-primary dark:text-secondary"
+              class="font-bold text-base mb-2 text-black dark:text-white"
             >
               Street Fashion
             </h3>
             <div class="flex items-center justify-between">
-              <span class="text-accent font-bold text-lg">₦18,000</span>
+              <span class="text-black dark:text-white font-bold text-lg">₦18,000</span>
               <div
-                class="flex items-center gap-1 bg-secondary/20 px-2 py-1 rounded-full"
+                class="flex items-center gap-1 bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full"
               >
-                <i class="fas fa-star text-accent text-xs"></i>
+                <i class="fas fa-star text-black dark:text-white text-xs"></i>
                 <span class="text-xs font-semibold">5.0</span>
               </div>
             </div>
@@ -795,7 +816,7 @@
 
     <!-- Banner Section -->
     <div
-      class="min-h-[550px] flex justify-center items-center py-12 sm:py-0 mt-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10"
+      class="min-h-[550px] flex justify-center items-center py-12 sm:py-0 mt-20 bg-black text-white"
     >
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
@@ -815,17 +836,17 @@
           <div class="flex flex-col justify-center gap-6 sm:pt-0">
             <div class="inline-block">
               <span
-                class="text-sm uppercase tracking-widest text-accent font-semibold bg-accent/20 px-4 py-2 rounded-full"
+                class="text-sm uppercase tracking-widest text-white font-semibold bg-gray-800 px-4 py-2 rounded-full"
                 >Limited Edition</span
               >
             </div>
             <h1
-              class="text-4xl sm:text-5xl font-bold text-primary dark:text-secondary decorative-line"
+              class="text-4xl sm:text-5xl font-bold text-white decorative-line"
             >
               New Season Collection
             </h1>
             <p
-              class="text-base text-gray-700 dark:text-gray-300 leading-relaxed"
+              class="text-base text-white leading-relaxed"
             >
               Discover our latest arrivals featuring premium quality clothing
               designed for the modern individual. From casual wear to statement
@@ -835,17 +856,17 @@
             <!-- Price Range -->
             <div
               data-aos="fade-up"
-              class="bg-secondary/20 dark:bg-secondary/10 rounded-xl p-5 border-l-4 border-primary"
+              class="bg-gray-800 rounded-lg p-5 border-2 border-white"
             >
               <p
-                class="text-xs text-gray-600 dark:text-gray-400 mb-1 uppercase tracking-wider"
+                class="text-xs text-gray-400 mb-1 uppercase tracking-wider"
               >
                 Starting from
               </p>
-              <p class="text-4xl font-bold text-primary dark:text-accent">
+              <p class="text-4xl font-bold text-white">
                 ₦8,500
               </p>
-              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+              <p class="text-xs text-gray-400 mt-1">
                 Limited time offer
               </p>
             </div>
@@ -853,38 +874,38 @@
             <div class="grid grid-cols-2 gap-4">
               <div
                 data-aos="fade-up"
-                class="flex items-center gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md"
+                class="flex items-center gap-3 bg-gray-800 p-4 rounded-lg border-2 border-gray-700"
               >
-                <i class="fas fa-shield-alt text-3xl text-primary"></i>
-                <p class="text-sm font-semibold">Premium Quality</p>
+                <i class="fas fa-shield-alt text-3xl text-white"></i>
+                <p class="text-sm font-semibold text-white">Premium Quality</p>
               </div>
               <div
                 data-aos="fade-up"
-                class="flex items-center gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md"
+                class="flex items-center gap-3 bg-gray-800 p-4 rounded-lg border-2 border-gray-700"
               >
-                <i class="fas fa-shipping-fast text-3xl text-accent"></i>
-                <p class="text-sm font-semibold">Fast Delivery</p>
+                <i class="fas fa-shipping-fast text-3xl text-white"></i>
+                <p class="text-sm font-semibold text-white">Fast Delivery</p>
               </div>
               <div
                 data-aos="fade-up"
-                class="flex items-center gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md"
+                class="flex items-center gap-3 bg-gray-800 p-4 rounded-lg border-2 border-gray-700"
               >
-                <i class="fas fa-credit-card text-3xl text-secondary"></i>
-                <p class="text-sm font-semibold">Secure Payment</p>
+                <i class="fas fa-credit-card text-3xl text-white"></i>
+                <p class="text-sm font-semibold text-white">Secure Payment</p>
               </div>
               <div
                 data-aos="fade-up"
-                class="flex items-center gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md"
+                class="flex items-center gap-3 bg-gray-800 p-4 rounded-lg border-2 border-gray-700"
               >
-                <i class="fas fa-undo text-3xl text-primary"></i>
-                <p class="text-sm font-semibold">Easy Returns</p>
+                <i class="fas fa-undo text-3xl text-white"></i>
+                <p class="text-sm font-semibold text-white">Easy Returns</p>
               </div>
             </div>
 
             <!-- CTA Button -->
             <div data-aos="fade-up">
               <button
-                class="order-now-btn gradient-btn hover:scale-105 duration-200 text-white py-4 px-10 rounded-full font-bold shadow-xl text-lg"
+                class="order-now-btn bg-white text-black hover:scale-105 duration-200 py-4 px-10 rounded-full font-bold shadow-xl text-lg"
               >
                 Explore Collection
               </button>
@@ -897,7 +918,7 @@
     <!-- Subscribe Section -->
     <div
       data-aos="zoom-in"
-      class="mb-20 bg-gradient-to-r from-primary via-secondary to-primary text-white relative overflow-hidden"
+      class="mb-20 bg-black text-white relative overflow-hidden"
     >
       <div class="absolute inset-0 opacity-10">
         <div
@@ -909,9 +930,9 @@
       </div>
       <div class="container mx-auto px-4 py-16 relative z-10">
         <div class="max-w-2xl mx-auto text-center space-y-6">
-          <i class="fas fa-envelope-open-text text-5xl text-cream"></i>
+          <i class="fas fa-envelope-open-text text-5xl text-white"></i>
           <h1 class="text-3xl sm:text-4xl font-bold">Join Our Vintage Club</h1>
-          <p class="text-cream/90">
+          <p class="text-white/90">
             Get exclusive deals, early access to new collections, and vintage
             fashion tips delivered to your inbox.
           </p>
@@ -923,12 +944,12 @@
               class="flex-1 p-4 bg-white/20 backdrop-blur-sm text-white placeholder:text-white/70 border-2 border-white/30 rounded-full focus:outline-none focus:border-white shadow-lg"
             />
             <button
-              class="gradient-btn-alt px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-transform"
+              class="bg-white text-black px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-transform"
             >
               Subscribe
             </button>
           </div>
-          <p class="text-xs text-cream/70">
+          <p class="text-xs text-white/70">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>
@@ -936,24 +957,24 @@
     </div>
 
     <!-- Shop by Category Section -->
-    <div class="py-16 bg-cream dark:bg-gray-900">
+    <div class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <p
             data-aos="fade-up"
-            class="text-sm text-accent uppercase tracking-widest font-semibold"
+            class="text-sm text-black uppercase tracking-widest font-semibold"
           >
             Browse Collections
           </p>
           <h1
             data-aos="fade-up"
-            class="text-4xl font-bold text-primary dark:text-secondary decorative-line inline-block"
+            class="text-4xl font-bold text-black decorative-line inline-block"
           >
             Shop by Category
           </h1>
           <p
             data-aos="fade-up"
-            class="text-sm text-gray-600 dark:text-gray-400 mt-4"
+            class="text-sm text-gray-600 mt-4"
           >
             Find exactly what you're looking for in our curated vintage
             collections
@@ -1039,10 +1060,10 @@
     </div>
 
     <!-- Limited Time Offers Section -->
-    <div class="py-16 bg-white dark:bg-gray-800">
+    <div class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div
-          class="bg-gradient-to-br from-primary via-secondary to-accent rounded-3xl p-8 md:p-12 text-white shadow-2xl"
+          class="bg-black rounded-3xl p-8 md:p-12 text-white shadow-2xl"
         >
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div data-aos="fade-right">
@@ -1098,18 +1119,18 @@
     </div>
 
     <!-- Why Choose Us Section -->
-    <div class="py-16 bg-cream dark:bg-gray-900">
+    <div class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <p
             data-aos="fade-up"
-            class="text-sm text-accent uppercase tracking-widest font-semibold"
+            class="text-sm text-black uppercase tracking-widest font-semibold"
           >
             Our Promise
           </p>
           <h1
             data-aos="fade-up"
-            class="text-4xl font-bold text-primary dark:text-secondary decorative-line inline-block"
+            class="text-4xl font-bold text-black decorative-line inline-block"
           >
             Why Shop With Us
           </h1>
@@ -1119,17 +1140,17 @@
           <div
             data-aos="fade-up"
             data-aos-delay="0"
-            class="text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            class="text-center p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200"
           >
             <div
-              class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-primary/20"
+              class="w-24 h-24 bg-black/10 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-black/20"
             >
-              <i class="fas fa-truck text-4xl text-primary"></i>
+              <i class="fas fa-truck text-4xl text-black"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3 text-primary dark:text-secondary">
+            <h3 class="text-xl font-bold mb-3 text-black">
               Free Shipping
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">
+            <p class="text-gray-600 text-sm">
               On all orders over ₦10,000
             </p>
           </div>
@@ -1137,17 +1158,17 @@
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            class="text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            class="text-center p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200"
           >
             <div
-              class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6"
             >
-              <i class="fas fa-lock text-4xl text-accent"></i>
+              <i class="fas fa-lock text-4xl text-black"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3 text-primary dark:text-secondary">
+            <h3 class="text-xl font-bold mb-3 text-black">
               Secure Payment
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">
+            <p class="text-gray-600 text-sm">
               100% secure transactions
             </p>
           </div>
@@ -1155,17 +1176,17 @@
           <div
             data-aos="fade-up"
             data-aos-delay="200"
-            class="text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            class="text-center p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200"
           >
             <div
-              class="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6"
             >
-              <i class="fas fa-headset text-4xl text-secondary"></i>
+              <i class="fas fa-headset text-4xl text-black"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3 text-primary dark:text-secondary">
+            <h3 class="text-xl font-bold mb-3 text-black">
               24/7 Support
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">
+            <p class="text-gray-600 text-sm">
               Always here to help you
             </p>
           </div>
@@ -1173,17 +1194,17 @@
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            class="text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            class="text-center p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200"
           >
             <div
-              class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-primary/20"
+              class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-gray-200"
             >
-              <i class="fas fa-medal text-4xl text-primary"></i>
+              <i class="fas fa-medal text-4xl text-black"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3 text-primary dark:text-secondary">
+            <h3 class="text-xl font-bold mb-3 text-black">
               Premium Quality
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">
+            <p class="text-gray-600 text-sm">
               Only the finest materials
             </p>
           </div>
@@ -1192,24 +1213,24 @@
     </div>
 
     <!-- Testimonials Section -->
-    <div class="py-16 mb-10 bg-white dark:bg-gray-800">
+    <div class="py-16 mb-10 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12 max-w-[600px] mx-auto">
           <p
             data-aos="fade-up"
-            class="text-sm text-accent uppercase tracking-widest font-semibold"
+            class="text-sm text-black uppercase tracking-widest font-semibold"
           >
             Customer Love
           </p>
           <h1
             data-aos="fade-up"
-            class="text-4xl font-bold text-primary dark:text-secondary decorative-line inline-block"
+            class="text-4xl font-bold text-black decorative-line inline-block"
           >
             What They Say
           </h1>
           <p
             data-aos="fade-up"
-            class="text-sm text-gray-600 dark:text-gray-400 mt-4"
+            class="text-sm text-gray-600 mt-4"
           >
             Hear from our satisfied customers about their vintage fashion
             journey with us
@@ -1222,7 +1243,7 @@
 
     <!-- Footer -->
     <div
-      class="text-white bg-gradient-to-br from-primary via-secondary to-primary py-16 relative overflow-hidden"
+      class="text-white bg-black py-16 relative overflow-hidden"
     >
       <div class="absolute inset-0 opacity-5">
         <div
@@ -1237,14 +1258,14 @@
           <div>
             <div class="flex items-center gap-3 mb-4">
               <div class="bg-white/20 p-3 rounded-lg">
-                <i class="fas fa-crown text-3xl"></i>
+                <i class="fas fa-crown text-3xl text-white"></i>
               </div>
               <div>
                 <div class="text-xs tracking-widest">TIMELESS</div>
                 <div class="text-lg font-bold">TRENDS VINTAGE</div>
               </div>
             </div>
-            <p class="text-sm text-cream/90 leading-relaxed">
+            <p class="text-sm text-white leading-relaxed">
               Your destination for authentic vintage fashion. Quality, style,
               and timeless elegance in every piece.
             </p>
@@ -1254,23 +1275,23 @@
             <h2 class="text-xl font-bold mb-6 decorative-line">Quick Links</h2>
             <ul class="flex flex-col gap-3">
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i><span>Home</span>
               </li>
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i><span>Shop</span>
               </li>
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i
                 ><span>About Us</span>
               </li>
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i><span>Contact</span>
               </li>
@@ -1281,25 +1302,25 @@
             <h2 class="text-xl font-bold mb-6 decorative-line">Collections</h2>
             <ul class="flex flex-col gap-3">
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i
                 ><span>Men's Vintage</span>
               </li>
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i
                 ><span>Women's Vintage</span>
               </li>
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i
                 ><span>Accessories</span>
               </li>
               <li
-                class="cursor-pointer hover:text-accent hover:translate-x-2 duration-300 text-cream/90 flex items-center gap-2"
+                class="cursor-pointer hover:text-gray-300 hover:translate-x-2 duration-300 text-white flex items-center gap-2"
               >
                 <i class="fas fa-chevron-right text-xs"></i
                 ><span>New Arrivals</span>
@@ -1307,12 +1328,12 @@
             </ul>
           </div>
 
-          <div class="flex flex-col gap-4 text-sm text-cream/90">
+          <div class="flex flex-col gap-4 text-sm text-white">
             <h2 class="text-xl font-bold decorative-line text-white">
               Get in Touch
             </h2>
             <div
-              class="flex items-center gap-3 hover:text-accent transition-colors cursor-pointer"
+              class="flex items-center gap-3 hover:text-gray-300 transition-colors cursor-pointer"
             >
               <div class="bg-white/20 p-2 rounded-lg">
                 <i class="fab fa-facebook text-xl"></i>
@@ -1320,7 +1341,7 @@
               <span>Timeless_Trends_Vintage</span>
             </div>
             <div
-              class="flex items-center gap-3 hover:text-accent transition-colors cursor-pointer"
+              class="flex items-center gap-3 hover:text-gray-300 transition-colors cursor-pointer"
             >
               <div class="bg-white/20 p-2 rounded-lg">
                 <i class="fab fa-instagram text-xl"></i>
@@ -1328,7 +1349,7 @@
               <span>@TimelessTrendsVintage</span>
             </div>
             <div
-              class="flex items-center gap-3 hover:text-accent transition-colors cursor-pointer"
+              class="flex items-center gap-3 hover:text-gray-300 transition-colors cursor-pointer"
             >
               <div class="bg-white/20 p-2 rounded-lg">
                 <i class="fas fa-map-marker-alt text-xl"></i>
@@ -1336,7 +1357,7 @@
               <span>Lagos, Nigeria</span>
             </div>
             <div
-              class="flex items-center gap-3 hover:text-accent transition-colors cursor-pointer"
+              class="flex items-center gap-3 hover:text-gray-300 transition-colors cursor-pointer"
             >
               <div class="bg-white/20 p-2 rounded-lg">
                 <i class="fas fa-mobile-alt text-xl"></i>
@@ -1346,9 +1367,9 @@
           </div>
         </div>
         <div class="border-t border-white/20 pt-8 text-center">
-          <p class="text-cream/70 text-sm">
+          <p class="text-white text-sm">
             © 2025 Timeless Trends Vintage. All rights reserved. | Crafted with
-            <i class="fas fa-heart text-accent"></i> for vintage lovers
+            <i class="fas fa-heart text-red-500"></i> for vintage lovers
           </p>
         </div>
       </div>
@@ -1357,11 +1378,11 @@
     <!-- Popup Modal -->
     <div id="orderPopup" class="popup-overlay">
       <div
-        class="bg-white dark:bg-gray-900 dark:text-white rounded-2xl p-8 w-96 relative shadow-2xl border-4 border-primary"
+        class="bg-white dark:bg-gray-900 dark:text-white rounded-2xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto relative shadow-2xl border-4 border-primary"
       >
         <button
           id="closePopup"
-          class="absolute top-4 right-4 text-gray-500 hover:text-accent dark:text-gray-300 dark:hover:text-accent transition-colors"
+          class="absolute top-4 right-4 text-gray-500 hover:text-accent dark:text-gray-300 dark:hover:text-accent transition-colors z-10"
         >
           <i class="fas fa-times-circle text-3xl"></i>
         </button>
@@ -1372,68 +1393,139 @@
           >
             <i class="fas fa-shopping-bag text-3xl text-primary"></i>
           </div>
-          <h2 class="text-2xl font-bold text-primary dark:text-secondary">
-            Place Your Order
+          <h2 class="text-2xl font-bold text-black dark:text-white">
+            Complete Your Order
           </h2>
           <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            Fill in your details below
+            Fill in your delivery and payment details
           </p>
         </div>
 
-        <form class="flex flex-col gap-4" id="orderForm">
-          <div>
-            <label
-              class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
-              >Full Name</label
-            >
-            <input
-              type="text"
-              placeholder="John Doe"
-              class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
-              required
-            />
+        <form class="flex flex-col gap-6" id="orderForm">
+          <!-- Delivery Information Section -->
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-black dark:text-white flex items-center gap-2">
+              <i class="fas fa-map-marker-alt"></i>
+              Delivery Information
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  placeholder="+234 XXX XXX XXXX"
+                  class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                placeholder="john@example.com"
+                class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
+                required
+              />
+            </div>
+            <div>
+              <label
+                class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                >Delivery Address</label
+              >
+              <textarea
+                placeholder="Enter your full delivery address"
+                class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all resize-none"
+                rows="3"
+                required
+              ></textarea>
+            </div>
           </div>
-          <div>
-            <label
-              class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
-              >Phone Number</label
-            >
-            <input
-              type="tel"
-              placeholder="+234 XXX XXX XXXX"
-              class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
-              required
-            />
+
+          <!-- Payment Information Section -->
+          <div class="space-y-4 pt-4 border-t-2 border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-bold text-black dark:text-white flex items-center gap-2">
+              <i class="fas fa-credit-card"></i>
+              Payment Details
+            </h3>
+            <div>
+              <label
+                class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                >Card Number</label
+              >
+              <input
+                type="text"
+                placeholder="1234 5678 9012 3456"
+                maxlength="19"
+                class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
+                required
+              />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                  >Expiry Date</label
+                >
+                <input
+                  type="text"
+                  placeholder="MM/YY"
+                  maxlength="5"
+                  class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                  >CVV</label
+                >
+                <input
+                  type="text"
+                  placeholder="123"
+                  maxlength="3"
+                  class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
+                >Cardholder Name</label
+              >
+              <input
+                type="text"
+                placeholder="Name on card"
+                class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
+                required
+              />
+            </div>
           </div>
-          <div>
-            <label
-              class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
-              >Email Address</label
-            >
-            <input
-              type="email"
-              placeholder="john@example.com"
-              class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all"
-              required
-            />
-          </div>
-          <div>
-            <label
-              class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 block"
-              >Delivery Address</label
-            >
-            <textarea
-              placeholder="Enter your full address"
-              class="w-full border-2 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-all resize-none"
-              rows="3"
-              required
-            ></textarea>
-          </div>
+
           <button
             type="submit"
-            class="mt-2 gradient-btn hover:scale-105 duration-200 text-white font-bold py-4 rounded-lg shadow-lg"
+            class="mt-2 bg-black dark:bg-white text-white dark:text-black hover:scale-105 duration-200 font-bold py-4 rounded-lg shadow-lg"
           >
-            Confirm Order <i class="fas fa-arrow-right ml-2"></i>
+            Complete Order <i class="fas fa-check-circle ml-2"></i>
           </button>
         </form>
       </div>
